@@ -2,11 +2,15 @@ package com.edwin.BackendToDo.model;
 
 import java.util.Date;
 
-public class task {
+import javax.persistence.Entity;
+
+@Entity
+public class Task {
     private int id;
     private String description;
     private boolean isComplete;
     private Date date;
+    private Date finishDate;
     public Date getDate() {
         return date;
     }
@@ -28,14 +32,20 @@ public class task {
     public String getDescription() {
         return description;
     }
+    
+    public Date getFinishDate() {
+    	return finishDate;
+    }
 
     public void setDescription(String description) {
         this.description = description;
     }
-    public task(int id, String description) {
+    public Task(int id, String description, Date date) {
         this.id = id;
         this.description = description;
+        this.date = date;
     }
-
+    
+    
 
 }
