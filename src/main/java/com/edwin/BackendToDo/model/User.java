@@ -1,19 +1,27 @@
 package com.edwin.BackendToDo.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "user")
 public class User {
-	private int id;
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int userId;
 	private String name;
 	private String email;
 	private String username;
 	
 	public int getId() {
-		return id;
+		return userId;
 	}
 	public void setId(int id) {
-		this.id = id;
+		this.userId = id;
 	}
 	public String getUsername() {
 		return username;
