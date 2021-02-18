@@ -8,5 +8,5 @@ import com.edwin.BackendToDo.model.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer>{
-
+	User findUserByUserId(int UserId);
 }

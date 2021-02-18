@@ -7,5 +7,5 @@ import com.edwin.BackendToDo.model.Task;
 
 @Repository
 public interface TaskRepository extends JpaRepository<Task, Integer>{
-	
+	Task findTaskByTaskId(int id);
 }

@@ -4,7 +4,6 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -13,13 +12,20 @@ import javax.persistence.Table;
 public class Task {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue
 	private int taskId;
     private int userId;
     private String description;
     private boolean isComplete;
     private Date date;
     private Date finishDate;
+    
+    public int getTaskId( ) {
+    	return taskId;
+    }
+    public void setTaskId(int newId) {
+    	this.taskId = newId;
+    }
     public Date getDate() {
         return date;
     }
@@ -49,11 +55,12 @@ public class Task {
     public void setDescription(String description) {
         this.description = description;
     }
-    public Task(int id, String description, Date date, Date finishDate) {
+    public Task(int id, String description, Date date, Date finishDate, boolean isComplete) {
         this.userId = id;
         this.description = description;
         this.date = date;
         this.finishDate = finishDate;
+        this.isComplete = isComplete;
     }
     
     
